@@ -1483,7 +1483,7 @@ class GP_Locales {
 		$ml->google_code = 'ml';
 		$ml->facebook_locale = 'ml_IN';
 
-		$mlt = new GP_Locale(); 
+		$mlt = new GP_Locale();
 		$mlt->english_name = 'Maltese';
 		$mlt->native_name = 'Malti';
 		$mlt->lang_code_iso_639_1 = 'mt';
@@ -1496,7 +1496,7 @@ class GP_Locales {
 		$mlt->plural_expression = '(n==1 ? 0 : n==0 || ( n%100>1 && n%100<11) ? 1 : (n%100>10 && n%100<20 ) ? 2 : 3)';
 		$mlt->google_code = 'mt';
 		$mlt->facebook_locale = 'mt_MT';
-		
+
 		$mn = new GP_Locale();
 		$mn->english_name = 'Mongolian';
 		$mn->native_name = 'Монгол';
@@ -2328,8 +2328,8 @@ class GP_Locales {
 		$zh->variants[ $zh_tw->slug ] = $zh_tw->english_name;
 
 		$def_vars = get_defined_vars();
-		
-		if ( function_exists( apply_filters ) ) {
+
+		if ( function_exists( 'apply_filters' ) ) {
 			/**
 			 * Fires after the locales have been defined but before they have been assigned to the object property.
 			 *
@@ -2341,8 +2341,8 @@ class GP_Locales {
 			 */
 			$def_vars = apply_filters( 'gp_locale_definitions_arrary', $def_vars );
 		}
-		
-		foreach( $def_vars as $locale ) {
+
+		foreach ( $def_vars as $locale ) {
 			$this->locales[ $locale->slug ] = $locale;
 		}
 	}
