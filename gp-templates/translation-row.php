@@ -182,7 +182,8 @@ if ( is_object( $glossary ) ) {
 			<dl>
 				<dt><?php _e( 'Root Translaton:', 'glotpress' ); ?></dt>
 			<?php if ( $t->translation_set_id === $t->root_translation_set_id ) : ?>
-				<dd><?php
+				<dd>
+<?php
 				gp_link(
 					gp_url_project_locale(
 						$project,
@@ -192,11 +193,12 @@ if ( is_object( $glossary ) ) {
 							'filters[status]' => 'either',
 							'filters[original_id]' => $t->original_id,
 							'filters[translation_id]' => $t->id,
-							)
-						),
-						$root_translation_set->name_with_locale()
-					);
- ?></dd>
+						)
+					),
+					$root_translation_set->name_with_locale()
+				);
+ ?>
+ </dd>
 			<?php else : ?>
 				<dd><?php _e( 'False', 'glotpress' ); ?></dd>
 			<?php endif; ?>
